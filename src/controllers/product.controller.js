@@ -20,6 +20,32 @@ exports.getProducts = async ( req, res ) => {
     }
 };
 
+exports.getProductById = async (req, res) => {
+    try {
+        let product = await Product.findOne({ _id: req.params.productId });
+        
+        if (product) {
+            res.status(200).send({
+                data: product,
+                status: 200,
+                message: 'Data found!'
+            });
+        } else {
+            res.status(200).send({
+                data: null,
+                status: 200,
+                message: 'Data not found!'
+            });
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(400).send({
+            message: err,
+            error: true
+        });
+    }
+};
+
 exports.addProduct = async ( req, res ) => {
     try {
         const body = req.body;

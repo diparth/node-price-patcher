@@ -28,10 +28,10 @@ const productSchema = new mongoose.Schema({
     collection: 'productmaster'
 });
 
-productSchema.index({ title: 1 });
-productSchema.index({ price: 1 });
-productSchema.index({ max_price: 1, min_price: 1 });
-productSchema.index({ estimated_sales_per_week: 1 });
+// productSchema.index({ title: 1 });
+// productSchema.index({ price: 1 });
+// productSchema.index({ max_price: 1, min_price: 1 });
+// productSchema.index({ estimated_sales_per_week: 1 });
 
 const Product = mongoose.model('productMaster', productSchema);
 module.exports = Product;
