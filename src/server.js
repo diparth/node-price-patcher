@@ -19,3 +19,4 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/api/v1/products', require('./routes/product.route'));
+app.use('/api/v1/orders', require('./routes/order.route'));
